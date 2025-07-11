@@ -18,7 +18,7 @@
 We introduce **Transport-Guided Rectified Flow Inversion**, a zero-shot method for semantic image editing that combines rectified flows with optimal transport theory. Unlike existing RF inversion approaches, our method avoids optimization or fine-tuning and provides controllable, high-fidelity edits while preserving structure.
 
 <p align="center">
-  <img src="./assets/teaser.png" alt="teaser" width="80%">
+  <img src="assets/teaser.png" alt="teaser" width="80%">
 </p>
 
 ---
