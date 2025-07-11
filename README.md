@@ -154,12 +154,9 @@ We welcome contributions! Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for gu
 ## 📖 Citation
 
 ```bibtex
-@inproceedings{transport_rf_inversion_2026,
+@inproceedings{otip_2025,
   title     = {Transport-Guided Rectified Flow Inversion: Improved Image Editing Using Optimal Transport Theory},
   author    = {Anonymous},
-  booktitle = {IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
-  year      = {2026},
-  organization = {IEEE}
 }
 ```
 
