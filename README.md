@@ -145,12 +145,6 @@ edited_face = ot_pipe.edit_face(
 
 ---
 
-## 🤝 Contributing
-
-We welcome contributions! Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
-
----
-
 ## 📖 Citation
 
 ```bibtex
