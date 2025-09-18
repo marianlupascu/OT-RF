@@ -1,6 +1,6 @@
 <div align="center">
 
-# Transport-Guided Rectified Flow Inversion
+# Transport-Guided Rectified Flow
 
 **Improved Image Editing Using Optimal Transport Theory**
 
@@ -15,7 +15,7 @@
 
 ---
 
-We introduce **Transport-Guided Rectified Flow Inversion**, a zero-shot method for semantic image editing that combines rectified flows with optimal transport theory. Unlike existing RF inversion approaches, our method avoids optimization or fine-tuning and provides controllable, high-fidelity edits while preserving structure.
+We introduce **Transport-Guided Rectified Flow Image Editing:**, a zero-shot method for semantic image editing that combines rectified flows with optimal transport theory. Unlike existing RF inversion approaches, our method avoids optimization or fine-tuning and provides controllable, high-fidelity edits while preserving structure.
 
 <p align="center">
   <img src="assets/teaser.png" alt="teaser" width="80%">
@@ -148,8 +148,8 @@ edited_face = ot_pipe.edit_face(
 ## 📖 Citation
 
 ```bibtex
-@inproceedings{otip_2025,
-  title     = {Transport-Guided Rectified Flow Inversion: Improved Image Editing Using Optimal Transport Theory},
+@inproceedings{otrf_2025,
+  title     = {Optimal Transport for Rectified Flow Image Editing: Unifying Inversion-Based and Direct Methods},
   author    = {Anonymous},
 }
 ```
