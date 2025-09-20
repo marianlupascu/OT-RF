@@ -1,7 +1,17 @@
+<div align="center">
 
+# Transport-Guided Rectified Flow
 
-`<div  align="center"> # Transport-Guided Rectified Flow  **Improved Image Editing Using Optimal Transport Theory**  <a  href='TODO'><img  src='https://img.shields.io/badge/Project-Page-green'></a> <a  href='TODO'><img  src='https://img.shields.io/badge/WACV-2026-blue'></a> <a  href='TODO'><img  src='https://img.shields.io/badge/arXiv-Preprint-red'></a>
-![GitHub stars](https://img.shields.io/github/stars/marianlupascu/OT-Inversion?style=social) **WACV 2026 Submission - Algorithms Track**  </div>
+**Improved Image Editing Using Optimal Transport Theory**
+
+<a href='TODO'><img src='https://img.shields.io/badge/Project-Page-green'></a> <a href='TODO'>
+<img src='https://img.shields.io/badge/WACV-2026-blue'></a> 
+<a href='TODO'><img src='https://img.shields.io/badge/arXiv-Preprint-red'></a>
+![GitHub stars](https://img.shields.io/github/stars/marianlupascu/OT-Inversion?style=social)
+
+**WACV 2026 Submission - Algorithms Track**
+
+</div>
 
 ---
 
