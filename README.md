@@ -1,43 +1,19 @@
-<div align="center">
 
-# Transport-Guided Rectified Flow
 
-**Improved Image Editing Using Optimal Transport Theory**
-
-<a href='TODO'><img src='https://img.shields.io/badge/Project-Page-green'></a> <a href='TODO'>
-<img src='https://img.shields.io/badge/WACV-2026-blue'></a> 
-<a href='TODO'><img src='https://img.shields.io/badge/arXiv-Preprint-red'></a>
-![GitHub stars](https://img.shields.io/github/stars/marianlupascu/OT-Inversion?style=social)
-
-**WACV 2026 Submission - Algorithms Track**
-
-</div>
+`<div  align="center"> # Transport-Guided Rectified Flow  **Improved Image Editing Using Optimal Transport Theory**  <a  href='TODO'><img  src='https://img.shields.io/badge/Project-Page-green'></a> <a  href='TODO'><img  src='https://img.shields.io/badge/WACV-2026-blue'></a> <a  href='TODO'><img  src='https://img.shields.io/badge/arXiv-Preprint-red'></a>
+![GitHub stars](https://img.shields.io/github/stars/marianlupascu/OT-Inversion?style=social) **WACV 2026 Submission - Algorithms Track**  </div>
 
 ---
 
-We introduce **Transport-Guided Rectified Flow Image Editing:**, a zero-shot method for semantic image editing that combines rectified flows with optimal transport theory. Unlike existing RF inversion approaches, our method avoids optimization or fine-tuning and provides controllable, high-fidelity edits while preserving structure.
+We introduce **Transport-Guided Rectified Flow Image Editing**, a unified framework for semantic image editing that combines rectified flows with optimal transport theory. Our approach includes both inversion-based editing (RF-Inversion+OTC) and inversion-free editing (FlowEdit+OTC) methods. <p  align="center"> <img  src="assets/teaser.png"  alt="teaser"  width="80%"> </p>
 
-<p align="center">
-  <img src="assets/teaser.png" alt="teaser" width="80%">
-</p>
+## 🔥 Updates  *  **2025-07-11**: Paper submitted to WACV 2026 *  **2025-07-08**: Initial release of code + demo *  **2025-07-01**: Paper available on [arXiv](TODO)
 
----
+## 🚀 Quick Start  
 
-## 🔥 Updates
+### Transport-Guided RF Inversion We extend [🤗 Hugging Face Diffusers](https://github.com/huggingface/diffusers) to support **OT-guided rectified flow inversion and editing** with FLUX models.
 
-* **2025-07-11**: Paper submitted to WACV 2026
-* **2025-07-08**: Initial release of code + demo
-* **2025-07-01**: Paper available on [arXiv](TODO)
-
----
-
-## 🚀 Diffusers Implementation
-
-We extend [🤗 Hugging Face Diffusers](https://github.com/huggingface/diffusers) to support **OT-guided rectified flow inversion and editing** with FLUX models.
-
-### ✨ Quick Example
-
-```python
+```
 import torch, random, numpy as np, requests, os
 from diffusers import FluxPipeline
 from io import BytesIO
@@ -45,8 +21,10 @@ from PIL import Image
 from optimal_transport_rf_inversion import OptimalTransportRFInversionPipeline
 
 # Reproducibility
-random.seed(42); np.random.seed(42)
-torch.manual_seed(42); torch.cuda.manual_seed(42)
+random.seed(42)
+np.random.seed(42)
+torch.manual_seed(42)
+torch.cuda.manual_seed(42)
 
 # Load base FLUX model
 base_pipe = FluxPipeline.from_pretrained(
@@ -94,30 +72,69 @@ edited_image = ot_pipe(
 # Save results
 os.makedirs("./results", exist_ok=True)
 edited_image.save("./results/edited_ot.png")
-print("✅ Saved to ./results/edited_ot.png")
+print("✅ Saved to ./results/edited_ot.png")` 
 ```
+----------
 
-### 🎯 Advanced Usage
+### Transport-Enhanced FlowEdit (Inversion-Free)
 
-```python
-# Stroke-to-image
-stroke_image = Image.open("./assets/stroke_bedroom.png")
-realistic_image = ot_pipe.stroke_to_image(
-    stroke_image=stroke_image,
-    prompt="a photo-realistic picture of a bedroom",
-    transport_strength=0.4,
-    num_steps=28
-)
+#### 1. Setup Configuration Files
 
-# Face editing
-face_image = Image.open("./assets/face_input.jpg")
-edited_face = ot_pipe.edit_face(
-    image=face_image,
-    prompt="a smiling cartoon",
-    preserve_identity=True,
-    transport_strength=0.2
-)
+**SD3 configuration (`SD3_exp_enhanced.yaml`):**
 ```
+`exp_name:  "demo_sd3_enhanced"  model_type:  "SD3"  T_steps:  50  n_avg:  1  src_guidance_scale:  3.5  tar_guidance_scale:  13.5  n_min:  0  n_max:  33  seed:  42  use_optimal_transport:  true  transport_strength:  0.6  ot_reg_coeff:  0.01  adaptive_transport:  true  dataset_yaml:  "edits.yaml"` 
+```
+**FLUX configuration (`FLUX_exp_enhanced.yaml`):**
+```
+`exp_name:  "demo_flux_enhanced"  model_type:  "FLUX"  T_steps:  28  n_avg:  1  src_guidance_scale:  1.5  tar_guidance_scale:  7.5  n_min:  0  n_max:  24  seed:  42  use_optimal_transport:  true  transport_strength:  1.0  ot_reg_coeff:  0.1  adaptive_transport:  true  dataset_yaml:  "edits.yaml"` 
+```
+**Dataset configuration (`edits.yaml`):**
+```
+`-  input_img:  SFHQ_pt1_00000008.jpg  source_prompt:  face  of  a  man/woman  target_prompts:  -  face  of  a  man/woman  wearing  glasses  -  input_img:  SFHQ_pt1_00000009.jpg  source_prompt:  face  of  a  man/woman  target_prompts:  -  face  of  a  man/woman  wearing  glasses` 
+```
+----------
+
+#### 2. Run Transport-Enhanced FlowEdit
+
+**Basic usage:**
+
+`# Run with SD3 python run_script_enhanced.py --exp_yaml SD3_exp_enhanced.yaml --device_number 0 # Run with FLUX python run_script_enhanced.py --exp_yaml FLUX_exp_enhanced.yaml --device_number 0` 
+
+**Advanced usage with analysis:**
+
+`python run_script_enhanced.py \
+    --exp_yaml FLUX_exp_enhanced.yaml \
+    --device_number 0 \
+    --save_transport_analysis \
+    --compare_methods \
+    --create_comparison_grids \
+    --verbose` 
+
+#### 3. Compare with Original FlowEdit
+
+`# Original FlowEdit (no OT) python run_script.py --exp_yaml FLUX_exp.yaml --device_number 0` 
+
+----------
+
+### 4. Key Parameters
+
+**Transport Enhancement:**
+
+-   `use_optimal_transport`: Enable/disable OT guidance (`true/false`)
+    
+-   `transport_strength`: Base transport strength (0.1–1.2)
+    
+-   `ot_reg_coeff`: Regularization for Sinkhorn solver (0.01–0.15)
+    
+-   `adaptive_transport`: Enable adaptive transport strength (`true/false`)
+    
+
+**Architecture-Specific Optimal Settings:**
+
+-   FLUX: `transport_strength=1.0`, `ot_reg_coeff=0.1`
+    
+-   SD3: `transport_strength=0.4`, `ot_reg_coeff=0.15`
+    
 
 ---
 
@@ -135,37 +152,52 @@ edited_face = ot_pipe.edit_face(
 
 ---
 
+## 📁 File Structure
+
+`├── FlowEdit_utils.py # Original FlowEdit implementation ├── FlowEdit_utils_enhanced.py # Transport-enhanced FlowEdit ├── run_script.py # Basic FlowEdit runner ├── run_script_enhanced.py # Enhanced FlowEdit with OT ├── edits.yaml # Dataset configuration ├── SD3_exp.yaml # SD3 basic config ├── SD3_exp_enhanced.yaml # SD3 enhanced config ├── FLUX_exp.yaml # FLUX basic config ├── FLUX_exp_enhanced.yaml # FLUX enhanced config └── outputs/ # Generated results` 
+
+----------
+
 ## 📦 Requirements
 
-* Python ≥ 3.9
-* PyTorch ≥ 2.0
-* CUDA ≥ 11.8
-* Diffusers ≥ 0.24.0
-* Transformers ≥ 4.36.0
+-   Python ≥ 3.9
+    
+-   PyTorch ≥ 2.0
+    
+-   CUDA ≥ 11.8
+    
+-   Diffusers ≥ 0.24.0
+    
+-   Transformers ≥ 4.36.0
+    
+-   PyYAML
+    
+-   tqdm
+    
+-   PIL
+    
 
----
+----------
 
 ## 📖 Citation
 
-```bibtex
-@inproceedings{otrf_2025,
-  title     = {Optimal Transport for Rectified Flow Image Editing: Unifying Inversion-Based and Direct Methods},
+`@inproceedings{otrf_2025,
+  title     = {Transport-Guided Rectified Flow Inversion: Improved Image Editing Using Optimal Transport Theory},
   author    = {Anonymous},
-}
-```
+}` 
 
----
+----------
 
 ## 📄 License
 
 This research is submitted to WACV 2026. Code will be released under MIT License upon acceptance.
 
----
+----------
 
 ## 🙏 Acknowledgments
 
-* Built upon [FLUX](https://github.com/black-forest-labs/flux) rectified flow models
-* Extends [Hugging Face Diffusers](https://github.com/huggingface/diffusers)
-* Inspired by optimal transport theory and [RF-Inversion](https://rf-inversion.github.io/)
-
----
+-   Built upon FLUX and SD3 rectified flow models
+    
+-   Extends Hugging Face Diffusers
+    
+-   Inspired by optimal transport theory,  RF-Inversion and FlowEdit
