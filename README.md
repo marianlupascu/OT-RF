@@ -98,15 +98,62 @@ print("✅ Saved to ./results/edited_ot.png")`
 
 **SD3 configuration (`SD3_exp_enhanced.yaml`):**
 ```
-`exp_name:  "demo_sd3_enhanced"  model_type:  "SD3"  T_steps:  50  n_avg:  1  src_guidance_scale:  3.5  tar_guidance_scale:  13.5  n_min:  0  n_max:  33  seed:  42  use_optimal_transport:  true  transport_strength:  0.6  ot_reg_coeff:  0.01  adaptive_transport:  true  dataset_yaml:  "edits.yaml"` 
+-
+  exp_name: "demo_sd3_enhanced"
+  model_type: "SD3"
+  T_steps: 50
+  n_avg: 1
+  src_guidance_scale: 3.5
+  tar_guidance_scale: 13.5
+  n_min: 0
+  n_max: 33
+  seed: 42
+
+  use_optimal_transport: true
+  transport_strength: 0.6            
+  entropy_regularization: 0.01       
+  use_regional_transport: false
+  
+  dataset_yaml: "edits.yaml"
 ```
+
 **FLUX configuration (`FLUX_exp_enhanced.yaml`):**
 ```
-`exp_name:  "demo_flux_enhanced"  model_type:  "FLUX"  T_steps:  28  n_avg:  1  src_guidance_scale:  1.5  tar_guidance_scale:  7.5  n_min:  0  n_max:  24  seed:  42  use_optimal_transport:  true  transport_strength:  1.0  ot_reg_coeff:  0.1  adaptive_transport:  true  dataset_yaml:  "edits.yaml"` 
+-
+  exp_name: "demo_flux_enhanced"
+  model_type: "SD3"
+  T_steps: 50
+  n_avg: 1
+  src_guidance_scale: 3.5
+  tar_guidance_scale: 13.5
+  n_min: 0
+  n_max: 33
+  seed: 42
+
+  use_optimal_transport: true
+  transport_strength: 0.6           
+  entropy_regularization: 0.01      
+  use_regional_transport: false
+  
+  dataset_yaml: "edits.yaml"
 ```
+
 **Dataset configuration (`edits.yaml`):**
 ```
-`-  input_img:  SFHQ_pt1_00000008.jpg  source_prompt:  face  of  a  man/woman  target_prompts:  -  face  of  a  man/woman  wearing  glasses  -  input_img:  SFHQ_pt1_00000009.jpg  source_prompt:  face  of  a  man/woman  target_prompts:  -  face  of  a  man/woman  wearing  glasses` 
+-
+    input_img:  SFHQ_pt1_00000008.jpg
+    source_prompt: face of a man/woman
+
+    target_prompts:
+    - face of a man/woman wearing glasses
+    
+- 
+    input_img:  SFHQ_pt1_00000009.jpg
+    source_prompt: face of a man/woman
+
+    target_prompts:
+    - face of a man/woman wearing glasses
+
 ```
 ----------
 
@@ -114,7 +161,12 @@ print("✅ Saved to ./results/edited_ot.png")`
 
 **Basic usage:**
 
-`# Run with SD3 python run_script_enhanced.py --exp_yaml SD3_exp_enhanced.yaml --device_number 0 # Run with FLUX python run_script_enhanced.py --exp_yaml FLUX_exp_enhanced.yaml --device_number 0` 
+```# Run with SD3 
+python run_script_enhanced.py --exp_yaml SD3_exp_enhanced.yaml --device_number 0 
+
+# Run with FLUX 
+python run_script_enhanced.py --exp_yaml FLUX_exp_enhanced.yaml --device_number 0
+```
 
 **Advanced usage with analysis:**
 
