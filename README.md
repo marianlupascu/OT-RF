@@ -17,11 +17,17 @@
 
 We introduce **Transport-Guided Rectified Flow Image Editing**, a unified framework for semantic image editing that combines rectified flows with optimal transport theory. Our approach includes both inversion-based editing (RF-Inversion+OTC) and inversion-free editing (FlowEdit+OTC) methods. <p  align="center"> <img  src="assets/teaser.png"  alt="teaser"  width="80%"> </p>
 
-## 🔥 Updates  *  **2025-07-11**: Paper submitted to WACV 2026 *  **2025-07-08**: Initial release of code + demo *  **2025-07-01**: Paper available on [arXiv](TODO)
+## 🔥 Updates
+
+* **2025-07-11**: Paper submitted to WACV 2026
+* **2025-07-08**: Initial release of code + demo
+* **2025-07-01**: Paper available on [arXiv](TODO)
+
 
 ## 🚀 Quick Start  
 
-### Transport-Guided RF Inversion We extend [🤗 Hugging Face Diffusers](https://github.com/huggingface/diffusers) to support **OT-guided rectified flow inversion and editing** with FLUX models.
+### Transport-Guided RF Inversion 
+We extend [🤗 Hugging Face Diffusers](https://github.com/huggingface/diffusers) to support **OT-guided rectified flow inversion and editing** with FLUX models.
 
 ```
 import torch, random, numpy as np, requests, os
@@ -162,52 +168,37 @@ print("✅ Saved to ./results/edited_ot.png")`
 
 ---
 
-## 📁 File Structure
-
-`├── FlowEdit_utils.py # Original FlowEdit implementation ├── FlowEdit_utils_enhanced.py # Transport-enhanced FlowEdit ├── run_script.py # Basic FlowEdit runner ├── run_script_enhanced.py # Enhanced FlowEdit with OT ├── edits.yaml # Dataset configuration ├── SD3_exp.yaml # SD3 basic config ├── SD3_exp_enhanced.yaml # SD3 enhanced config ├── FLUX_exp.yaml # FLUX basic config ├── FLUX_exp_enhanced.yaml # FLUX enhanced config └── outputs/ # Generated results` 
-
-----------
-
 ## 📦 Requirements
 
--   Python ≥ 3.9
-    
--   PyTorch ≥ 2.0
-    
--   CUDA ≥ 11.8
-    
--   Diffusers ≥ 0.24.0
-    
--   Transformers ≥ 4.36.0
-    
--   PyYAML
-    
--   tqdm
-    
--   PIL
-    
+* Python ≥ 3.9
+* PyTorch ≥ 2.0
+* CUDA ≥ 11.8
+* Diffusers ≥ 0.24.0
+* Transformers ≥ 4.36.0
 
-----------
+---
 
 ## 📖 Citation
 
-`@inproceedings{otrf_2025,
-  title     = {Transport-Guided Rectified Flow Inversion: Improved Image Editing Using Optimal Transport Theory},
+```bibtex
+@inproceedings{otrf_2025,
+  title     = {Optimal Transport for Rectified Flow Image Editing: Unifying Inversion-Based and Direct Methods},
   author    = {Anonymous},
-}` 
+}
+```
 
-----------
+---
 
 ## 📄 License
 
 This research is submitted to WACV 2026. Code will be released under MIT License upon acceptance.
 
-----------
+---
 
 ## 🙏 Acknowledgments
 
--   Built upon FLUX and SD3 rectified flow models
-    
--   Extends Hugging Face Diffusers
-    
--   Inspired by optimal transport theory,  RF-Inversion and FlowEdit
+* Built upon [FLUX](https://github.com/black-forest-labs/flux) rectified flow models
+* Extends [Hugging Face Diffusers](https://github.com/huggingface/diffusers)
+* Inspired by optimal transport theory and [RF-Inversion](https://rf-inversion.github.io/)
+
+---
