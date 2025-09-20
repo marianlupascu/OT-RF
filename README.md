@@ -135,20 +135,14 @@ print("✅ Saved to ./results/edited_ot.png")`
 ### 4. Key Parameters
 
 **Transport Enhancement:**
-
 -   `use_optimal_transport`: Enable/disable OT guidance (`true/false`)
-    
 -   `transport_strength`: Base transport strength (0.1–1.2)
-    
 -   `ot_reg_coeff`: Regularization for Sinkhorn solver (0.01–0.15)
-    
 -   `adaptive_transport`: Enable adaptive transport strength (`true/false`)
     
 
 **Architecture-Specific Optimal Settings:**
-
 -   FLUX: `transport_strength=1.0`, `ot_reg_coeff=0.1`
-    
 -   SD3: `transport_strength=0.4`, `ot_reg_coeff=0.15`
     
 
