@@ -1,0 +1,12 @@
+-
+  exp_name: "demo_flux_standard"
+  model_type: "SD3"
+  T_steps: 50
+  n_avg: 1
+  src_guidance_scale: 3.5
+  tar_guidance_scale: 13.5
+  n_min: 0
+  n_max: 33
+  seed: 42
+
+  dataset_yaml: "edits.yaml"

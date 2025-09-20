@@ -1,0 +1,18 @@
+
+-
+  exp_name: "demo_sd3_enhanced"
+  model_type: "SD3"
+  T_steps: 50
+  n_avg: 1
+  src_guidance_scale: 3.5
+  tar_guidance_scale: 13.5
+  n_min: 0
+  n_max: 33
+  seed: 42
+
+  use_optimal_transport: true
+  transport_strength: 0.6            
+  entropy_regularization: 0.01       
+  use_regional_transport: false
+  
+  dataset_yaml: "edits.yaml"

@@ -1,0 +1,14 @@
+-
+    input_img:  SFHQ_pt1_00000008.jpg
+    source_prompt: face of a man/woman
+
+    target_prompts:
+    - face of a man/woman wearing glasses
+    
+- 
+    input_img:  SFHQ_pt1_00000009.jpg
+    source_prompt: face of a man/woman
+
+    target_prompts:
+    - face of a man/woman wearing glasses
+
