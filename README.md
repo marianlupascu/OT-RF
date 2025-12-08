@@ -4,9 +4,9 @@
 
 **Improved Image Editing Using Optimal Transport Theory**
 
-<a href='TODO'><img src='https://img.shields.io/badge/Project-Page-green'></a> <a href='TODO'>
+<!--<a href='TODO'><img src='https://img.shields.io/badge/Project-Page-green'></a> <a href='TODO'>-->
 <img src='https://img.shields.io/badge/WACV-2026-blue'></a> 
-<a href='TODO'><img src='https://img.shields.io/badge/arXiv-Preprint-red'></a>
+<a href='https://arxiv.org/abs/2508.02363'><img src='https://img.shields.io/badge/arXiv-Preprint-red'></a>
 ![GitHub stars](https://img.shields.io/github/stars/marianlupascu/OT-Inversion?style=social)
 
 **WACV 2026 Submission - Algorithms Track**
@@ -19,9 +19,10 @@ We introduce **Transport-Guided Rectified Flow Image Editing**, a unified framew
 
 ## 🔥 Updates
 
+* **2025-11-06**: Paper accepted to WACV 2026
 * **2025-07-11**: Paper submitted to WACV 2026
 * **2025-07-08**: Initial release of code + demo
-* **2025-07-01**: Paper available on [arXiv](TODO)
+* **2025-07-01**: Paper available on [arXiv paper](https://arxiv.org/abs/2508.02363)
 
 
 ## 🚀 Quick Start  
@@ -210,7 +211,7 @@ python run_script_enhanced.py --exp_yaml FLUX_exp_enhanced.yaml --device_number 
 | Face Editing              | CLIP-I ↑   | 0.936        | **0.999**     | 6.7%        |
 | Reconstruction            | SSIM ↑     | 0.833        | **0.992**     | 19.1%       |
 
-📄 More details in the [arXiv paper](TODO)
+📄 More details in the [arXiv paper](https://arxiv.org/abs/2508.02363)
 
 ---
 
@@ -227,17 +228,14 @@ python run_script_enhanced.py --exp_yaml FLUX_exp_enhanced.yaml --device_number 
 ## 📖 Citation
 
 ```bibtex
-@inproceedings{otrf_2025,
-  title     = {Optimal Transport for Rectified Flow Image Editing: Unifying Inversion-Based and Direct Methods},
-  author    = {Anonymous},
+@article{lupascu2025transport,
+  title={Transport-Guided Rectified Flow Inversion: Improved Image Editing Using Optimal Transport Theory},
+  author={Lupascu, Marian and Stupariu, Mihai-Sorin},
+  journal={arXiv e-prints},
+  pages={arXiv--2508},
+  year={2025}
 }
 ```
-
----
-
-## 📄 License
-
-This research is submitted to WACV 2026. Code will be released under MIT License upon acceptance.
 
 ---
 
@@ -245,6 +243,6 @@ This research is submitted to WACV 2026. Code will be released under MIT License
 
 * Built upon [FLUX](https://github.com/black-forest-labs/flux) rectified flow models
 * Extends [Hugging Face Diffusers](https://github.com/huggingface/diffusers)
-* Inspired by optimal transport theory and [RF-Inversion](https://rf-inversion.github.io/)
+* Inspired by optimal transport theory, [FlowEdit](https://github.com/fallenshock/FlowEdit) and [RF-Inversion](https://rf-inversion.github.io/)
 
 ---
