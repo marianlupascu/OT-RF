@@ -228,11 +228,10 @@ python run_script_enhanced.py --exp_yaml FLUX_exp_enhanced.yaml --device_number 
 ## 📖 Citation
 
 ```bibtex
-@article{lupascu2025transport,
-  title={Transport-Guided Rectified Flow Inversion: Improved Image Editing Using Optimal Transport Theory},
+@article{lupascu2025optimal,
+  title={Optimal Transport for Rectified Flow Image Editing: Unifying Inversion-Based and Direct Methods},
   author={Lupascu, Marian and Stupariu, Mihai-Sorin},
-  journal={arXiv e-prints},
-  pages={arXiv--2508},
+  journal={arXiv preprint arXiv:2508.02363},
   year={2025}
 }
 ```
