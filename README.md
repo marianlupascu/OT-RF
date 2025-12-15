@@ -1,8 +1,8 @@
 <div align="center">
 
-# Transport-Guided Rectified Flow
+# Optimal Transport for Rectified Flow Image Editing
 
-**Improved Image Editing Using Optimal Transport Theory**
+**Unifying Inversion-Based and Direct Methods**
 
 <!--<a href='TODO'><img src='https://img.shields.io/badge/Project-Page-green'></a> <a href='TODO'>-->
 <img src='https://img.shields.io/badge/WACV-2026-blue'></a> 
