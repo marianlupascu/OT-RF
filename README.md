@@ -1,15 +1,19 @@
 <div align="center">
 
 # Optimal Transport for Rectified Flow Image Editing
+### Unifying Inversion-Based and Direct Methods
 
-**Unifying Inversion-Based and Direct Methods**
-
-<!--<a href='TODO'><img src='https://img.shields.io/badge/Project-Page-green'></a> <a href='TODO'>-->
-<img src='https://img.shields.io/badge/WACV-2026-blue'></a> 
-<a href='https://arxiv.org/abs/2508.02363'><img src='https://img.shields.io/badge/arXiv-Preprint-red'></a>
+<a href='https://wacv.thecvf.com/virtual/2026/poster/955'>
+  <img src='https://img.shields.io/badge/WACV-Poster-2026-orange'>
+</a>
+<img src='https://img.shields.io/badge/WACV-2026-blue'>
+<a href='https://arxiv.org/abs/2508.02363'>
+  <img src='https://img.shields.io/badge/arXiv-Preprint-red'>
+</a>
 ![GitHub stars](https://img.shields.io/github/stars/marianlupascu/OT-Inversion?style=social)
 
-**WACV 2026 Submission - Algorithms Track**
+**Marian Lupașcu, Mihai-Sorin Stupariu**  
+WACV 2026 (Algorithms Track)
 
 </div>
 
@@ -19,6 +23,7 @@ We introduce **Transport-Guided Rectified Flow Image Editing**, a unified framew
 
 ## 🔥 Updates
 
+* **2026-03-10**: Presented at WACV 2026 in Tucson, Arizona. See the [official poster](https://wacv.thecvf.com/virtual/2026/poster/955)
 * **2025-11-06**: Paper accepted to WACV 2026
 * **2025-07-11**: Paper submitted to WACV 2026
 * **2025-07-08**: Initial release of code + demo
@@ -228,12 +233,13 @@ python run_script_enhanced.py --exp_yaml FLUX_exp_enhanced.yaml --device_number 
 ## 📖 Citation
 
 ```bibtex
-@inproceedings{lupacscu2026optimal,
-  title={Optimal Transport for Rectified Flow Image Editing: Unifying Inversion-Based and Direct Methods},
-  author={Lupa{\c{s}}cu, Marian and Stupariu, Mihai Sorin},
-  booktitle={Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision},
-  pages={6764--6774},
-  year={2026}
+@InProceedings{Lupascu_2026_WACV,
+    author    = {Lupa\c{s}cu, Marian and Stupariu, Mihai Sorin},
+    title     = {Optimal Transport for Rectified Flow Image Editing: Unifying Inversion-Based and Direct Methods},
+    booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+    month     = {March},
+    year      = {2026},
+    pages     = {6764--6774}
 }
 ```
 
