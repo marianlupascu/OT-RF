@@ -1,21 +1,4 @@
-<div align="center">
-
-# Optimal Transport for Rectified Flow Image Editing
-### Unifying Inversion-Based and Direct Methods
-
-<a href='https://wacv.thecvf.com/virtual/2026/poster/955'>
-  <img src='https://img.shields.io/badge/WACV-Poster-2026-orange'>
-</a>
-<img src='https://img.shields.io/badge/WACV-2026-blue'>
-<a href='https://arxiv.org/abs/2508.02363'>
-  <img src='https://img.shields.io/badge/arXiv-Preprint-red'>
-</a>
-![GitHub stars](https://img.shields.io/github/stars/marianlupascu/OT-Inversion?style=social)
-
-**Marian Lupașcu, Mihai-Sorin Stupariu**  
-WACV 2026 (Algorithms Track)
-
-</div>
+<div align="center"> # Optimal Transport for Rectified Flow Image Editing **Unifying Inversion-Based and Direct Methods** <!--<a href='TODO'><img src='https://img.shields.io/badge/Project-Page-green'></a> <a href='TODO'>--> <img src='https://img.shields.io/badge/WACV-2026-blue'></a> <a href='https://arxiv.org/abs/2508.02363'><img src='https://img.shields.io/badge/arXiv-Preprint-red'></a> ![GitHub stars](https://img.shields.io/github/stars/marianlupascu/OT-Inversion?style=social) **WACV 2026 Submission - Algorithms Track** </div>
 
 ---
 
