@@ -9,7 +9,7 @@
 <a href='https://arxiv.org/abs/2508.02363'><img src='https://img.shields.io/badge/arXiv-Preprint-red'></a>
 ![GitHub stars](https://img.shields.io/github/stars/marianlupascu/OT-Inversion?style=social)
 
-**WACV 2026 Submission - Algorithms Track**
+**WACV 2026 - Algorithms Track**
 
 </div>
 
