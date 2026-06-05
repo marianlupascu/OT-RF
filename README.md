@@ -6,6 +6,7 @@
 
 <a href='https://arxiv.org/abs/2508.02363'><img src='https://img.shields.io/badge/arXiv-Preprint-red'></a>
 <a href='https://wacv.thecvf.com/virtual/2026/poster/955'><img src='https://img.shields.io/badge/WACV-2026-blue'></a>
+
 ![GitHub stars](https://img.shields.io/github/stars/marianlupascu/OT-RF?style=social)
 
 **WACV 2026 - Algorithms Track**
