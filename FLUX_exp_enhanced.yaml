@@ -1,6 +1,6 @@
 -
   exp_name: "demo_flux_enhanced"
-  model_type: "SD3"
+  model_type: "FLUX"
   T_steps: 50
   n_avg: 1
   src_guidance_scale: 3.5
