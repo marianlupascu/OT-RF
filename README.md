@@ -100,7 +100,7 @@ print("✅ Saved to ./results/edited_ot.png")`
 **SD3 configuration (`SD3_exp_enhanced.yaml`):**
 ```
 -
-  exp_name: "demo_flux_enhanced"
+  exp_name: "demo_sd3_enhanced"
   model_type: "SD3"
   T_steps: 50
   n_avg: 1
@@ -111,8 +111,8 @@ print("✅ Saved to ./results/edited_ot.png")`
   seed: 42
 
   use_optimal_transport: true
-  transport_strength: 0.6           
-  entropy_regularization: 0.01      
+  transport_strength: 0.6            
+  entropy_regularization: 0.01       
   use_regional_transport: false
   
   dataset_yaml: "edits.yaml"
