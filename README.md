@@ -6,6 +6,9 @@
 
 <a href='https://arxiv.org/abs/2508.02363'><img src='https://img.shields.io/badge/arXiv-Preprint-red'></a>
 <a href='https://wacv.thecvf.com/virtual/2026/poster/955'><img src='https://img.shields.io/badge/WACV-2026-blue'></a>
+<a href='https://huggingface.co/papers/2508.02363'><img src='https://img.shields.io/badge/%F0%9F%A4%97-Paper%20Page-yellow'></a>
+<a href='https://huggingface.co/maryanlup/OT-RF'><img src='https://img.shields.io/badge/%F0%9F%A4%97-Model-yellow'></a>
+<a href='https://huggingface.co/spaces/maryanlup/OT-RF'><img src='https://img.shields.io/badge/%F0%9F%A4%97-Demo-yellow'></a>
 ![GitHub stars](https://img.shields.io/github/stars/marianlupascu/OT-RF?style=social)
 
 **WACV 2026 - Algorithms Track**
@@ -18,6 +21,7 @@ We introduce **Transport-Guided Rectified Flow Image Editing**, a unified framew
 
 ## 🔥 Updates
 
+* **2026-11-17**: Released on 🤗 Hugging Face: [model](https://huggingface.co/maryanlup/OT-RF) · [demo](https://huggingface.co/spaces/maryanlup/OT-RF)
 * **2026-03-10**: Presented at WACV 2026 in Tucson, Arizona. See the [official poster](https://wacv.thecvf.com/virtual/2026/poster/955)
 * **2025-11-06**: Paper accepted to WACV 2026
 * **2025-07-11**: Paper submitted to WACV 2026
