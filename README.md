@@ -34,66 +34,34 @@ We introduce **Transport-Guided Rectified Flow Image Editing**, a unified framew
 ### Transport-Guided RF Inversion 
 We extend [🤗 Hugging Face Diffusers](https://github.com/huggingface/diffusers) to support **OT-guided rectified flow inversion and editing** with FLUX models.
 
-```
-import torch, random, numpy as np, requests, os
+```python
+import os, sys, torch
 from diffusers import FluxPipeline
-from io import BytesIO
-from PIL import Image
-from improved_optimal_transport_rf_inversion import OptimalTransportRFInversionPipeline
+from diffusers.utils import load_image
+from huggingface_hub import hf_hub_download
 
-# Reproducibility
-random.seed(42)
-np.random.seed(42)
 torch.manual_seed(42)
-torch.cuda.manual_seed(42)
 
-# Load base FLUX model
 base_pipe = FluxPipeline.from_pretrained(
-    "black-forest-labs/FLUX.1-dev",
-    torch_dtype=torch.bfloat16,
-    custom_pipeline="pipeline_flux_rf_inversion"
-)
-base_pipe.to("cuda")
+    "black-forest-labs/FLUX.1-dev", torch_dtype=torch.bfloat16,
+    custom_pipeline="pipeline_flux_rf_inversion").to("cuda")
+sys.modules["pipeline_flux_rf_inversion"] = sys.modules[type(base_pipe).__module__]
 
-# Wrap with OT-guided inversion
+sys.path.append(os.path.dirname(hf_hub_download("maryanlup/OT-RF", "improved_optimal_transport_rf_inversion.py")))
+from improved_optimal_transport_rf_inversion import OptimalTransportRFInversionPipeline
 ot_pipe = OptimalTransportRFInversionPipeline.from_pipe(base_pipe)
 
-# Load image
-def download_image(url):
-    response = requests.get(url)
-    return Image.open(BytesIO(response.content)).convert("RGB")
+image = load_image("https://raw.githubusercontent.com/marianlupascu/OT-RF/main/assets/face_input.jpg").resize((1024, 1024))
+inverted_latents, image_latents, latent_image_ids = ot_pipe.invert(image=image, num_inversion_steps=28)
 
-img_url = "https://example.com/sample_image.jpg"
-original_image = download_image(img_url).resize((512, 512))
-
-# Invert with optimal transport guidance
-inverted_latents, image_latents, latent_image_ids = ot_pipe.invert(
-    image=original_image,
-    num_inversion_steps=28,
-    transport_strength=0.5,
-    adaptive_scheduling=True
-)
-
-# Edit with transport-guided flow
 edited_image = ot_pipe(
-    prompt="a sleeping cat",
-    inverted_latents=inverted_latents,
-    image_latents=image_latents,
-    latent_image_ids=latent_image_ids,
-    start_timestep=0,
-    stop_timestep=7/28,
-    num_inference_steps=28,
-    eta=0.9,
-    use_ot_guidance=True,
-    transport_strength=0.3,
-    ot_guidance_phase=0.3,
-    respect_prompt_guidance=False
+    prompt="a person wearing glasses",
+    inverted_latents=inverted_latents, image_latents=image_latents, latent_image_ids=latent_image_ids,
+    start_timestep=0, stop_timestep=7/28, num_inference_steps=28, eta=0.9,
+    use_ot_guidance=True, transport_strength=0.3, ot_guidance_phase=0.3,
+    respect_prompt_guidance=False,
 ).images[0]
-
-# Save results
-os.makedirs("./results", exist_ok=True)
-edited_image.save("./results/edited_ot.png")
-print("✅ Saved to ./results/edited_ot.png")` 
+edited_image.save("edited_ot.png")
 ```
 ----------
 
@@ -238,7 +206,8 @@ python run_script_enhanced.py --exp_yaml FLUX_exp_enhanced.yaml --device_number 
     booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
     month     = {March},
     year      = {2026},
-    pages     = {6764--6774}
+    pages     = {6764--6774},
+    doi       = {10.1109/WACV61042.2026.00654}
 }
 ```
 
