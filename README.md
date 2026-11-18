@@ -6,6 +6,8 @@
 
 <a href='https://arxiv.org/abs/2508.02363'><img src='https://img.shields.io/badge/arXiv-Preprint-red'></a>
 <a href='https://wacv.thecvf.com/virtual/2026/poster/955'><img src='https://img.shields.io/badge/WACV-2026-blue'></a>
+<a href='https://www.youtube.com/watch?v=ceJxfEnBIxQ'><img src='https://img.shields.io/badge/YouTube-Video-red?logo=youtube'></a>
+<a href='https://wacv.thecvf.com/media/wacv-2026/Slides/955_1nB2xpY.pdf'><img src='https://img.shields.io/badge/Slides-PDF-orange'></a>
 <a href='https://huggingface.co/papers/2508.02363'><img src='https://img.shields.io/badge/%F0%9F%A4%97-Paper%20Page-yellow'></a>
 <a href='https://huggingface.co/maryanlup/OT-RF'><img src='https://img.shields.io/badge/%F0%9F%A4%97-Model-yellow'></a>
 <a href='https://huggingface.co/spaces/maryanlup/OT-RF'><img src='https://img.shields.io/badge/%F0%9F%A4%97-Demo-yellow'></a>
