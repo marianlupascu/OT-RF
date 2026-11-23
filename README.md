@@ -12,6 +12,7 @@
 <a href='https://huggingface.co/maryanlup/OT-RF'><img src='https://img.shields.io/badge/%F0%9F%A4%97-Model-yellow'></a>
 <a href='https://huggingface.co/spaces/maryanlup/OT-RF'><img src='https://img.shields.io/badge/%F0%9F%A4%97-Demo-yellow'></a>
 ![GitHub stars](https://img.shields.io/github/stars/marianlupascu/OT-RF?style=social)
+<img src="https://hits.sh/github.com/marianlupascu/OT-RF.svg?label=visitors&color=527f8d" alt="Visitors">
 
 **WACV 2026 - Algorithms Track**
 
